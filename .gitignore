@@ -45,3 +45,9 @@ next-env.d.ts
 
 # Ignore any Claude Code local settings files.
 .claude/settings.local.json
+
+# Ignore generated content-collections code.
+.content-collections
+
+# Ignore personal TODO list files.
+TODO.md
