@@ -11,5 +11,5 @@ export default function Article({ slug }: ArticleProps) {
     return <div>Article not found</div>;
   }
 
-  return <div>{article.body}</div>;
+  return <div>{article.content}</div>;
 }
