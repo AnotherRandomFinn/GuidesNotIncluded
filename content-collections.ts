@@ -8,7 +8,7 @@ const articles = defineCollection({
   schema: z.object({
     title: z.string().nonempty().nonoptional(),
     slug: z.string().nonempty().nonoptional(),
-    artical_type: z
+    article_type: z
       .enum(["guide", "build", "other"])
       .default("other")
       .nonoptional(),
