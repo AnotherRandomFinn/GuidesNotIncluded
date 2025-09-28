@@ -1,7 +1,5 @@
 import { allArticles } from "content-collections";
 
-const _404Slug = "/[slug]";
-
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
