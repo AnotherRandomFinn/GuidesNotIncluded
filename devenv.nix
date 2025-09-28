@@ -38,11 +38,11 @@
   enterTest = '''';
 
   # https://devenv.sh/git-hooks/
-  git-hooks.hooks = {
-    nixfmt-rfc-style.enable = true;
-    shellcheck.enable = true;
-    prettier.enable = true;
-  };
+  # git-hooks.hooks = {
+  #   nixfmt-rfc-style.enable = true;
+  #   shellcheck.enable = true;
+  #   prettier.enable = true;
+  # };
 
   # claude.code.enable = true;
 
