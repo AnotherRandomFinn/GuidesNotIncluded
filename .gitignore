@@ -41,7 +41,7 @@ yarn-error.log*
 next-env.d.ts
 
 # Ignore the devenv state directory and hooks.
-.devenv/*
+.devenv*
 
 # Ignore any Claude Code local settings files.
 .claude/settings.local.json
