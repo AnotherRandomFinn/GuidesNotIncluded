@@ -1,31 +1,12 @@
 name: CI
 
-# env:
-#   NEXT_TELEMETRY_DISABLED: 1
+env:
+  NEXT_TELEMETRY_DISABLED: 1
 
 on:
   push:
     branches-ignore:
       - main
-    paths:
-      - "app/**/*"
-      - "src/**/*"
-      - "public/**/*"
-      - "package.json"
-      - "pnpm-lock.yaml"
-      - "tsconfig.json"
-      - "content-collections.ts"
-  pull_request:
-    branches:
-      - main
-    paths:
-      - "app/**/*"
-      - "src/**/*"
-      - "public/**/*"
-      - "package.json"
-      - "pnpm-lock.yaml"
-      - "tsconfig.json"
-      - "content-collections.ts"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
