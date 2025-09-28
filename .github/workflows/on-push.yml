@@ -39,8 +39,8 @@ jobs:
       - name: Check formatting
         run: pnpm run fmt:check
 
-      # - name: Run linter
-      #   run: pnpm run lint
+      - name: Run linter
+        run: pnpm run lint
 
       - name: Run typecheck
         run: pnpm run typecheck
