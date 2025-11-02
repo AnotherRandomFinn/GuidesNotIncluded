@@ -19,8 +19,206 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  h1 {
+    @apply text-[24px] text-center;
+    font-family: var(--font-oswald), oswald, sans-serif;
+    font-weight: 500;
+    color: #292929;
+  }
+
+  h2 {
+    @apply text-[30px];
+    color: #292929;
+    font-family: var(--font-oswald), oswald, sans-serif;
+    font-weight: 500;
+  }
+
+  h3 {
+    @apply text-[22px] text-black;
+    font-family: var(--font-oswald), oswald, sans-serif;
+    font-weight: 500;
+  }
+}
+
+/* ------- Guides Not Included Custom Styles ------- */
+
+@layer components {
+  /* ------- Base layout ------- */
+
+  /* Body content wrapper: centered to 1024px with 16px padding; fills width ≥1024px */
+  .layout-wrap {
+    @apply mx-auto w-full px-4;
+    max-width: 1024px;
+  }
+  @screen lg {
+    .layout-wrap { max-width: none; }
+  }
+
+  /* Site header padding (16px top & bottom) */
+  .site-header { @apply py-4; }
+
+  /* ------- Typography ------- */
+
+  /* Headings */
+  .h1 {
+    @apply text-[24px] text-center;
+    font-family: var(--font-oswald), oswald, sans-serif;
+    font-weight: 500;
+    color: #292929;
+  }
+  .subtitle {
+    @apply leading-[1.4em] text-center;
+    font-family: var(--font-din-next), "din-next-w01-light", sans-serif;
+    font-weight: 300;
+    color: rgb(118 118 118);
+  }
+  .h2 {
+    @apply text-[30px];
+    color: #292929;
+    font-family: var(--font-oswald), oswald, sans-serif;
+    font-weight: 500;
+  }
+  .h3 {
+    @apply text-[22px] text-black;
+    font-family: var(--font-oswald), oswald, sans-serif;
+    font-weight: 500;
+  }
+
+  /* Standard body text */
+  .body-text {
+    @apply leading-[1.2] text-black;
+    font-family: var(--font-oswald), oswald, sans-serif;
+    font-weight: 200;
+  }
+
+  /* Body links (exclude nav by scoping to a content wrapper) */
+  .content a { @apply underline; }
+
+  /* Special link styles */
+  .link-build {
+    @apply uppercase;
+    font-family: var(--font-oswald), oswald, sans-serif;
+    font-weight: 500;
+  }
+  .link-guide {
+    @apply text-[18px];
+    font-family: var(--font-oswald), oswald, sans-serif;
+    font-weight: 200;
+  }
+  /* Special heading: Guide Header (can combine with .h3) */
+  .guide-header {
+    @apply uppercase text-[40px];
+    font-family: var(--font-oswald), oswald, sans-serif;
+    font-weight: 500;
+  }
+
+  /* Special body: Guide Body Text */
+  .guide-body-text {
+    @apply text-[15px] text-[#767676];
+    font-family: var(--font-din-next), "din-next-w01-light", sans-serif;
+    font-weight: 300;
+  }
+
+  /* ------- Primary navigation (desktop) ------- */
+
+  .nav { @apply w-full; }
+  .nav-list { @apply flex; }
+  .nav-item { @apply flex-1 relative; }
+
+  .nav-link {
+    @apply block px-2 text-center uppercase text-[15px] transition-colors duration-[400ms] ease-[ease];
+    font-family: var(--font-din-next), "din-next-w01-light", sans-serif;
+    font-weight: 300;
+    color: #767676;
+  }
+  .nav-link:hover,
+  .nav-link[aria-current="page"] { color: #000; }
+
+  /* Submenu (hover trigger on desktop) */
+  .submenu {
+    @apply absolute left-1/2 -translate-x-1/2 mt-2 hidden w-[276px] bg-white shadow;
+  }
+  .nav-item:hover .submenu { @apply block; }
+
+  .submenu-item { @apply h-[30px]; }
+  .submenu-link {
+    @apply block h-full px-3 flex items-center normal-case text-[15px] transition-colors duration-[400ms] ease-[ease];
+    font-family: var(--font-din-next), "din-next-w01-light", sans-serif;
+    font-weight: 300;
+    color: #767676;
+  }
+  .submenu-link:hover { color: #000; }
+
+  /* ------- Mobile navigation ------- */
+
+  /* Toggle button */
+  .mobile-toggle { @apply ml-2 inline-flex items-center justify-center w-10 h-10 md:hidden; }
+  .icon-hamburger { @apply block; }
+  .icon-close { @apply hidden; }
+  .mobile-toggle[aria-expanded="true"] .icon-hamburger { @apply hidden; }
+  .mobile-toggle[aria-expanded="true"] .icon-close { @apply block; }
+
+  /* Darkening overlay */
+  .overlay {
+    @apply fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 ease-out md:hidden;
+  }
+  .overlay.is-open { @apply opacity-100 pointer-events-auto; }
+
+  /* Slide-out panel from right (80vw) */
+  .mobile-panel {
+    @apply fixed right-0 top-0 h-screen w-[80vw] bg-white translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto overscroll-contain md:hidden;
+  }
+  .mobile-panel.is-open { @apply translate-x-0; }
+
+  /* Prevent page scroll when menu open (toggle on <html>) */
+  html.menu-open { @apply overflow-hidden; }
+
+  /* Mobile nav list */
+  .mobile-nav { @apply px-4 py-2; }
+  .mobile-primary { @apply divide-y; }
+
+  /* Primary items stacked, right-justified, 56px tall; hover to black */
+  .mobile-item-btn {
+    @apply w-full h-14 flex items-center justify-end gap-2 text-right text-[15px] uppercase transition-colors duration-[400ms] ease-[ease];
+    font-family: var(--font-din-next), "din-next-w01-light", sans-serif;
+    font-weight: 300;
+    color: #767676;
+  }
+  .mobile-item-btn:hover { color: #000; }
+
+  /* Chevron left of text; rotates when expanded */
+  .chevron { @apply order-first transition-transform duration-200; }
+  .mobile-item-btn[aria-expanded="true"] .chevron { @apply rotate-180; }
+
+  /* Expandable mobile submenu; items truncate with ellipsis */
+  .mobile-submenu { @apply hidden px-2 pb-2; }
+  .mobile-submenu.is-open { @apply block; }
+  .mobile-submenu-link {
+    @apply block h-[30px] flex items-center justify-end truncate text-[15px] normal-case transition-colors duration-[400ms] ease-[ease];
+    font-family: var(--font-din-next), "din-next-w01-light", sans-serif;
+    font-weight: 300;
+    color: #767676;
+  }
+  .mobile-submenu-link:hover { color: #000; }
+
+  /* ------- Hero ------- */
+  .hero {
+    @apply w-full h-[300px];
+  }
+  /* Full-width container with image background */
+  .hero-bg {
+    @apply w-full h-full bg-cover bg-center bg-no-repeat;
+    /* set the image via inline style or a utility like bg-[url('/path.jpg')] */
+  }
+  /* Right-aligned text box (max 300px, 16px padding, white text) */
+  .hero-text {
+    @apply max-w-[300px] p-4 text-white ml-auto;
+  }
 }

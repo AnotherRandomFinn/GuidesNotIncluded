@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Oswald } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -10,6 +11,20 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const oswald = Oswald({
+  variable: "--font-oswald",
+  subsets: ["latin"],
+  weight: ["200", "500"],
+});
+
+// Note: DIN Next is not available on Google Fonts. Using a fallback.
+// Consider purchasing DIN Next or using an alternative like Inter or Work Sans.
+const dinNext = Geist({
+  variable: "--font-din-next",
+  subsets: ["latin"],
+  weight: ["300"],
 });
 
 export const metadata: Metadata = {
@@ -25,8 +40,42 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} ${dinNext.variable} antialiased`}
       >
+        <nav className="bg-gray-800 text-white p-4">
+          <ul className="flex gap-6 justify-center">
+            <li>
+              <Link href="/" className="hover:underline">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="#builds" className="hover:underline">
+                Builds
+              </Link>
+            </li>
+            <li>
+              <Link href="#guides" className="hover:underline">
+                Guides
+              </Link>
+            </li>
+            <li>
+              <Link href="#useful-sites" className="hover:underline">
+                Useful Sites
+              </Link>
+            </li>
+            <li>
+              <Link href="#about" className="hover:underline">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="#privacy-policy" className="hover:underline">
+                Privacy Policy
+              </Link>
+            </li>
+          </ul>
+        </nav>
         {children}
       </body>
     </html>
