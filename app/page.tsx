@@ -14,10 +14,8 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Guides Not Included.</h1>
-
       <section id="builds">
-        <h2>Builds</h2>
+        <h2 className="h2">Builds</h2>
         <ul>
           {builds.map((article) => (
             <li key={article.slug}>

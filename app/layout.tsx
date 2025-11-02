@@ -42,40 +42,43 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} ${dinNext.variable} antialiased`}
       >
-        <nav className="bg-gray-800 text-white p-4">
-          <ul className="flex gap-6 justify-center">
-            <li>
-              <Link href="/" className="hover:underline">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="#builds" className="hover:underline">
-                Builds
-              </Link>
-            </li>
-            <li>
-              <Link href="#guides" className="hover:underline">
-                Guides
-              </Link>
-            </li>
-            <li>
-              <Link href="#useful-sites" className="hover:underline">
-                Useful Sites
-              </Link>
-            </li>
-            <li>
-              <Link href="#about" className="hover:underline">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="#privacy-policy" className="hover:underline">
-                Privacy Policy
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <header>
+          <h1>Guides Not Included</h1>
+          <nav className="bg-gray-800 text-white p-4">
+            <ul className="flex gap-6 justify-center">
+              <li>
+                <Link href="/" className="hover:underline">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="#builds" className="hover:underline">
+                  Builds
+                </Link>
+              </li>
+              <li>
+                <Link href="#guides" className="hover:underline">
+                  Guides
+                </Link>
+              </li>
+              <li>
+                <Link href="#useful-sites" className="hover:underline">
+                  Useful Sites
+                </Link>
+              </li>
+              <li>
+                <Link href="#about" className="hover:underline">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="#privacy-policy" className="hover:underline">
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
         {children}
       </body>
     </html>

@@ -27,21 +27,24 @@
   }
 
   h1 {
-    @apply text-[24px] text-center;
+    font-size: 24px;
+    text-align: center;
     font-family: var(--font-oswald), oswald, sans-serif;
     font-weight: 500;
     color: #292929;
   }
 
   h2 {
-    @apply text-[30px];
+    font-size: 30px;
+    text-align: center;
     color: #292929;
     font-family: var(--font-oswald), oswald, sans-serif;
     font-weight: 500;
   }
 
   h3 {
-    @apply text-[22px] text-black;
+    font-size: 22px;
+    color: #000;
     font-family: var(--font-oswald), oswald, sans-serif;
     font-weight: 500;
   }
