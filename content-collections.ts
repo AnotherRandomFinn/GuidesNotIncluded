@@ -7,6 +7,7 @@ const articles = defineCollection({
   include: "**/*.md",
   schema: z.object({
     title: z.string().nonempty().nonoptional(),
+    subtitle: z.string().optional(),
     slug: z.string().nonempty().nonoptional(),
     article_type: z
       .enum(["guide", "build", "other"])

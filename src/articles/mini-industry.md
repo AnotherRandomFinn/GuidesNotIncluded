@@ -1,7 +1,7 @@
 ---
 title: "Mini Industry"
 slug: "mini-industry"
-article_type: "build"
+article_type: "guide"
 ---
 
 # Welcome to the Mini Industry page.
