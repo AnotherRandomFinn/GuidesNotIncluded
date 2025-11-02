@@ -1,5 +1,6 @@
 import { allArticles } from "content-collections";
 import Link from "next/link";
+import Image from "next/image";
 import { AboutSection } from "@/components/AboutSection";
 import { PrivacyPolicySection } from "@/components/PrivacyPolicySection";
 import { ThirdPartyLink } from "@/components/ThirdPartyLink";
@@ -14,26 +15,78 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Guides Not Included.</h1>
-
-      <section id="builds">
-        <h2>Builds</h2>
-        <ul>
-          {builds.map((article) => (
-            <li key={article.slug}>
-              <Link href={`/${article.slug}`} className="underline">
-                {article.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <div className="relative w-full h-[245px]">
+        <Image
+          src="/images/ONI_wallpaper.jpg"
+          alt="Oxygen Not Included wallpaper"
+          fill
+          unoptimized
+          className="object-fit"
+        />
+        <div className="absolute inset-0 grid grid-cols-2">
+          <div></div>
+          <div className="flex items-center justify-center p-8">
+            <div className="text-white space-y-4">
+              <p>
+                Do you know what you want to build but can&apos;t remember what
+                bits go where or what the sensor settings were supposed to be?
+                Check the builds section.
+              </p>
+              <p>
+                Do your dupes keep simultaneously starving, suffocating and
+                peeing themselves? Have a look at The Complete Beginner&apos;s
+                Completely Incomplete Guide to Oxygen Not Included.
+              </p>
+              <p>
+                Were you actually looking for some other Oxygen Not Included
+                resource or website? Check the useful sites section.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section id="builds" className="mt-[5%]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h2 className="h2">Builds</h2>
+            <p>(What can I say - I have watched a lot of Francis John.)</p>
+            <ul>
+              {builds.map((article) => (
+                <li key={article.slug} className="leading-[1.4]">
+                  <Link
+                    href={`/${article.slug}`}
+                    className="underline uppercase font-[500]"
+                    style={{ fontFamily: 'var(--font-oswald), oswald, sans-serif' }}
+                  >
+                    {article.title}
+                  </Link>
+                  {article.subtitle && <p>{article.subtitle}</p>}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <Image
+              src="/images/RubyBase_2.png"
+              alt="Ruby Base build example"
+              width={1160}
+              height={1208}
+              unoptimized
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
       </section>
 
       <section id="guides">
         <h2>Guides</h2>
         <ul>
           {guides.map((article) => (
-            <li key={article.slug}>
+            <li
+              key={article.slug}
+              className="text-[18px] font-[200] leading-[1.4]"
+              style={{ fontFamily: 'var(--font-oswald), oswald, sans-serif' }}
+            >
               <Link href={`/${article.slug}`} className="underline">
                 {article.title}
               </Link>
