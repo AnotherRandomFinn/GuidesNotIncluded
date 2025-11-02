@@ -1,6 +1,6 @@
 ---
 title: "Anti Entropy Thermo Nullifier Cooling"
-slug: "anti-entropy-thermo-nullifier"
+slug: "anti-entropy-thermo-nullifier-cooling"
 article_type: "build"
 ---
 
