@@ -57,7 +57,6 @@
 
 /* ------- Guides Not Included Custom Styles ------- */
 @layer components {
-
   /* Special heading: Guide Header (can combine with .h3) */
   .guide-header {
     @apply uppercase text-[40px];
@@ -76,44 +75,70 @@
   .submenu {
     @apply absolute left-1/2 -translate-x-1/2 mt-2 hidden w-[276px] bg-white shadow;
   }
-  .nav-item:hover .submenu { @apply block; }
+  .nav-item:hover .submenu {
+    @apply block;
+  }
 
-  .submenu-item { @apply h-[30px]; }
+  .submenu-item {
+    @apply h-[30px];
+  }
   .submenu-link {
     @apply block h-full px-3 flex items-center normal-case text-[15px] transition-colors duration-[400ms] ease-[ease];
     font-family: var(--font-din-next), "din-next-w01-light", sans-serif;
     font-weight: 300;
     color: #767676;
   }
-  .submenu-link:hover { color: #000; }
+  .submenu-link:hover {
+    color: #000;
+  }
 
   /* ------- Mobile navigation ------- */
 
   /* Toggle button */
-  .mobile-toggle { @apply ml-2 inline-flex items-center justify-center w-10 h-10 md:hidden; }
-  .icon-hamburger { @apply block; }
-  .icon-close { @apply hidden; }
-  .mobile-toggle[aria-expanded="true"] .icon-hamburger { @apply hidden; }
-  .mobile-toggle[aria-expanded="true"] .icon-close { @apply block; }
+  .mobile-toggle {
+    @apply ml-2 inline-flex items-center justify-center w-10 h-10 md:hidden;
+  }
+  .icon-hamburger {
+    @apply block;
+  }
+  .icon-close {
+    @apply hidden;
+  }
+  .mobile-toggle[aria-expanded="true"] .icon-hamburger {
+    @apply hidden;
+  }
+  .mobile-toggle[aria-expanded="true"] .icon-close {
+    @apply block;
+  }
 
   /* Darkening overlay */
   .overlay {
     @apply fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 ease-out md:hidden;
   }
-  .overlay.is-open { @apply opacity-100 pointer-events-auto; }
+  .overlay.is-open {
+    @apply opacity-100 pointer-events-auto;
+  }
 
   /* Slide-out panel from right (80vw) */
   .mobile-panel {
     @apply fixed right-0 top-0 h-screen w-[80vw] bg-white translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto overscroll-contain md:hidden;
   }
-  .mobile-panel.is-open { @apply translate-x-0; }
+  .mobile-panel.is-open {
+    @apply translate-x-0;
+  }
 
   /* Prevent page scroll when menu open (toggle on <html>) */
-  html.menu-open { @apply overflow-hidden; }
+  html.menu-open {
+    @apply overflow-hidden;
+  }
 
   /* Mobile nav list */
-  .mobile-nav { @apply px-4 py-2; }
-  .mobile-primary { @apply divide-y; }
+  .mobile-nav {
+    @apply px-4 py-2;
+  }
+  .mobile-primary {
+    @apply divide-y;
+  }
 
   /* Primary items stacked, right-justified, 56px tall; hover to black */
   .mobile-item-btn {
@@ -122,22 +147,34 @@
     font-weight: 300;
     color: #767676;
   }
-  .mobile-item-btn:hover { color: #000; }
+  .mobile-item-btn:hover {
+    color: #000;
+  }
 
   /* Chevron left of text; rotates when expanded */
-  .chevron { @apply order-first transition-transform duration-200; }
-  .mobile-item-btn[aria-expanded="true"] .chevron { @apply rotate-180; }
+  .chevron {
+    @apply order-first transition-transform duration-200;
+  }
+  .mobile-item-btn[aria-expanded="true"] .chevron {
+    @apply rotate-180;
+  }
 
   /* Expandable mobile submenu; items truncate with ellipsis */
-  .mobile-submenu { @apply hidden px-2 pb-2; }
-  .mobile-submenu.is-open { @apply block; }
+  .mobile-submenu {
+    @apply hidden px-2 pb-2;
+  }
+  .mobile-submenu.is-open {
+    @apply block;
+  }
   .mobile-submenu-link {
     @apply block h-[30px] flex items-center justify-end truncate text-[15px] normal-case transition-colors duration-[400ms] ease-[ease];
     font-family: var(--font-din-next), "din-next-w01-light", sans-serif;
     font-weight: 300;
     color: #767676;
   }
-  .mobile-submenu-link:hover { color: #000; }
+  .mobile-submenu-link:hover {
+    color: #000;
+  }
 
   /* ------- Hero ------- */
   .hero {

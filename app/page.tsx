@@ -56,7 +56,9 @@ export default function Home() {
                   <Link
                     href={`/${article.slug}`}
                     className="underline uppercase font-[500]"
-                    style={{ fontFamily: 'var(--font-oswald), oswald, sans-serif' }}
+                    style={{
+                      fontFamily: "var(--font-oswald), oswald, sans-serif",
+                    }}
                   >
                     {article.title}
                   </Link>
@@ -85,7 +87,7 @@ export default function Home() {
             <li
               key={article.slug}
               className="text-[18px] font-[200] leading-[1.4]"
-              style={{ fontFamily: 'var(--font-oswald), oswald, sans-serif' }}
+              style={{ fontFamily: "var(--font-oswald), oswald, sans-serif" }}
             >
               <Link href={`/${article.slug}`} className="underline">
                 {article.title}

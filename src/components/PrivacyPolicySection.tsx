@@ -6,8 +6,8 @@ export function PrivacyPolicySection() {
         This site is made using, and is hosted by, a commercial service (called
         Wix). Because it&apos;s easy to use and I&apos;m lazy. They reserve the
         right to put cookies on this site. (Sorry about that. The goal for the
-        site is zero cookies, but I&apos;ll have to learn Wordpress or some
-        such first. The problem with that being the &quot;lazy&quot; part.)
+        site is zero cookies, but I&apos;ll have to learn Wordpress or some such
+        first. The problem with that being the &quot;lazy&quot; part.)
       </p>
       <p>
         I haven&apos;t put any cookies on this site or given the right to any
