@@ -60,7 +60,13 @@ export default function RootLayout({
         <div className="mx-auto w-full px-4 max-w-[1024px]">
           <header className="py-4">
             <h1 className="uppercase">Guides Not Included</h1>
-            <p className="leading-[1.8em] text-center font-[300] text-[rgb(118,118,118)] border-b border-[var(--heading-primary)]" style={{ fontFamily: 'var(--font-din-next), "din-next-w01-light", sans-serif' }}>
+            <p
+              className="leading-[1.8em] text-center font-[300] text-[rgb(118,118,118)] border-b border-[var(--heading-primary)]"
+              style={{
+                fontFamily:
+                  'var(--font-din-next), "din-next-w01-light", sans-serif',
+              }}
+            >
               Keep calm and press the space bar
             </p>
             <nav className="p-4 w-full">
@@ -70,7 +76,10 @@ export default function RootLayout({
                     <Link
                       href={link.href}
                       className="block px-2 text-center uppercase text-[15px] transition-colors duration-[400ms] hover:text-black font-[300] text-[#767676]"
-                      style={{ fontFamily: 'var(--font-din-next), "din-next-w01-light", sans-serif' }}
+                      style={{
+                        fontFamily:
+                          'var(--font-din-next), "din-next-w01-light", sans-serif',
+                      }}
                     >
                       {link.label}
                     </Link>
