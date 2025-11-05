@@ -1,0 +1,21 @@
+# Image files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+*.webp
+*.bmp
+*.tiff
+
+# Build output and generated files
+.next/
+.content-collections/
+out/
+build/
+dist/
+
+# Generated config files
+next.config.js
+next.config.mjs

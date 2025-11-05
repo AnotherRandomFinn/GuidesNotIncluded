@@ -2,6 +2,7 @@
   "name": "guidesnotincluded",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.20.0",
   "scripts": {
     "check": "pnpm 'fmt:check' && pnpm lint && pnpm typecheck && pnpm test",
     "dev": "concurrently \"content-collections watch\" \"next dev\"",
